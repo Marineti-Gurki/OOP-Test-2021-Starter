@@ -2,7 +2,7 @@ package ie.tudublin;
 
 public class Note extends ScoreDisplay {
     private char note;
-    private int duration;
+    private static int duration;
     private int number;
 
     public Note(char note, int duration, int number) {
@@ -11,12 +11,13 @@ public class Note extends ScoreDisplay {
         this.number = number;
     }
 
-    public void notelist()
+    public static void notelist()
     {
-        
+       for(int i = 0; i < notes.size(); i++)
+       {
+            
+       }
     }
-
-    
 
     public char getNote() {
         return note;
