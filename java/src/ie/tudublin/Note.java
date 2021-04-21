@@ -10,14 +10,6 @@ public class Note {
         this.duration = duration;
     }
 
-    // public static void notelist()
-    // {
-    //    for(int i = 0; i < notes.size(); i++)
-    //    {
-
-    //    }
-    // }
-
     public char getNote() {
         return note;
     }
@@ -33,7 +25,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Note [duration=" + duration + ", note=" + note + "]";
+        return "Note = [duration=" + duration + ", note=" + note + "]";
     }
     
 }

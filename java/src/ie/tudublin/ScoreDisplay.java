@@ -18,7 +18,8 @@ public class ScoreDisplay extends PApplet
 	// String score = "D2E2F2G2A2B2c2d2";
 	// String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	ArrayList<Note> notes = new ArrayList<Note>();
-	
+	int halfW = width / 2;
+	int halfH = height / 2;
 	
 	public void settings()
 	{
@@ -66,43 +67,50 @@ public class ScoreDisplay extends PApplet
 		}
 	}
 	
-
-
-		public String getScore() {
-		return score;
+	
+	
+	public void setup() 
+	{
+		loadScore();
 	}
-
-	public void setScore(String score) {
-		this.score = score;
-	}
-
-	public ArrayList<Note> getNotes() {
-		return notes;
-	}
-
-	public void setNotes(ArrayList<Note> notes) {
-		this.notes = notes;
-	}
-
-		@Override
-		public String toString() 
+	
+	public void draw()
+	{
+		background(255);
+		for(int i = 0; i < 6; i++)
 		{
-			return "ScoreDisplay [notes=" + notes + ", score=" + score + "]";
+			for(int k = 150; k < 400; k+=50)
+			{
+				line(50, k, width - 50, k);
+			}
 		}
-
-
-		public void setup() 
-		{
-			loadScore();
-			// Note.notelist();
-		}
-		
-		public void draw()
-		{
-			background(255);
-		}
-
+		drawNotes();
+	}
+	
 	void drawNotes()
 	{
+		
 	}
+	
+	public String getScore() {
+	return score;
+	}
+	
+	public void setScore(String score) {
+	this.score = score;
+	}
+	
+	public ArrayList<Note> getNotes() {
+	return notes;
+	}
+	
+	public void setNotes(ArrayList<Note> notes) {
+	this.notes = notes;
+	}
+	
+	// @Override
+	// public String toString() 
+	// {
+	// return "ScoreDisplay [notes=" + notes + ", score=" + score + "]";
+	// }
 }
