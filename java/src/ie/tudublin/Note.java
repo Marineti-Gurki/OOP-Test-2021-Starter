@@ -10,13 +10,13 @@ public class Note extends ScoreDisplay {
         this.duration = duration;
     }
 
-    public static void notelist()
-    {
-       for(int i = 0; i < notes.size(); i++)
-       {
+    // public static void notelist()
+    // {
+    //    for(int i = 0; i < notes.size(); i++)
+    //    {
 
-       }
-    }
+    //    }
+    // }
 
     public char getNote() {
         return note;
