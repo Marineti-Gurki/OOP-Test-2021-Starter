@@ -5,17 +5,16 @@ public class Note extends ScoreDisplay {
     private static int duration;
     private int number;
 
-    public Note(char note, int duration, int number) {
+    public Note(char note, int duration) {
         this.note = note;
         this.duration = duration;
-        this.number = number;
     }
 
     public static void notelist()
     {
        for(int i = 0; i < notes.size(); i++)
        {
-            
+
        }
     }
 

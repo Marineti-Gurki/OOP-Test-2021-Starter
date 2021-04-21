@@ -12,14 +12,18 @@ import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
 {
+	//Note note;
 	// String score = "DEFGABcd";
-	String score = "D2E2F2G2A2B2c2d2";
-	static ArrayList<String> notes = new ArrayList<String>();
+	// String score = "D2E2F2G2A2B2c2d2";
+	static ArrayList<Note> notes = new ArrayList<Note>();
 	static char result;
-	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
+	static char result2;
+	String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	
 	char test;
 	
+	String t;
+	String notecombine;
 	
 	
 	public void settings()
@@ -34,17 +38,23 @@ public class ScoreDisplay extends PApplet
 	
 	public void loadScore()
 	{
-		for(int i = 0; i < score.length(); i++)
+		for(int i = 0; i < score.length() - 1; i += 2)
 		{
-			result = score.charAt(i);
-			if(Character.isDigit(result))
+			if(i+1 >= score.length())
 			{
-				test = result;
+				result = score.charAt(i);
+				Note note = new Note (result, 1);
+				notes.add(note);
 			}
-			String t = String.valueOf(test);
-			String notecombine = result+t;
-			String score = String.valueOf(notecombine);
-			notes.add(score);
+			result = score.charAt(i);
+			result2 = score.charAt(i+1);
+			if(Character.isDigit(result2))
+			{
+				Note note = new Note(result, result2);
+			}
+
+
+			// notes.add(score);
 			println(notes);
 		}
 	}
