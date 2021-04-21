@@ -1,6 +1,9 @@
 package ie.tudublin;
 
+import java.time.Duration;
 import java.util.ArrayList;
+
+import com.jogamp.newt.event.GestureHandler;
 
 // import ddf.minim.AudioOutput;
 // import ddf.minim.Minim;
@@ -87,9 +90,34 @@ public class ScoreDisplay extends PApplet
 		drawNotes();
 	}
 	
-	void drawNotes()
+	public void drawNotes()
 	{
-		
+		for(int i = 0; i < notes.size(); i++)
+		{
+			Note note = notes.get(i);
+			int x = 50;
+			int y = i;
+			if (note.getDuration() == 1)
+            { 
+                circle(x+i, y, 40);
+                fill(0);
+                line(x+20, y, x+20, y-80);
+                //displays right note
+                textSize(26);
+                text(note.getNote(), x - 5, 100);
+            }
+			if (note.getDuration() == 2)
+            { 
+				for(int j = 0; j <  notes.size(); j++)
+				{
+					circle(x+j, y, 40);
+					fill(0);
+					line(x+20, y, x+20, y-80);
+					textSize(26);
+					text(note.getNote(), x - 5, 100);
+				}
+            }
+		}
 	}
 	
 	public String getScore() {
@@ -104,6 +132,7 @@ public class ScoreDisplay extends PApplet
 	return notes;
 	}
 	
+
 	public void setNotes(ArrayList<Note> notes) {
 	this.notes = notes;
 	}

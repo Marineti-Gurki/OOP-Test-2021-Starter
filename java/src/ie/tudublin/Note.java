@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-public class Note {
+public class Note extends ScoreDisplay{
     private char note;
     private int duration;
 
