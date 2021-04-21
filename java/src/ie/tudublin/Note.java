@@ -1,11 +1,11 @@
 package ie.tudublin;
 
-public class Note extends ScoreDisplay {
+public class Note {
     private char note;
-    private static int duration;
-    private int number;
+    private int duration;
 
-    public Note(char note, int duration) {
+
+    public Note(ScoreDisplay ScoreDisplay, char note, int duration) {
         this.note = note;
         this.duration = duration;
     }
@@ -29,6 +29,11 @@ public class Note extends ScoreDisplay {
     }
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Note [duration=" + duration + ", note=" + note + "]";
     }
     
 }
